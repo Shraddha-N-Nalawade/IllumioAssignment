@@ -1,16 +1,13 @@
 package com.illumio.assignment.testCases;
 
 import static org.junit.Assert.*;
+import org.junit.Test;
+import com.illumio.assignment.UrlSearch;
+import junit.framework.Assert;
 
 /**
  * @author shraddha
  */
-
-import org.junit.Test;
-
-import com.illumio.assignment.UrlSearch;
-
-import junit.framework.Assert;
 
 public class UrlSearchTest {
 	UrlSearch urlSearch = new UrlSearch();
@@ -66,35 +63,35 @@ public class UrlSearchTest {
 	}
 
 	@Test
-	public void verifByExcludingProtocol() throws Exception {
+	public void verifyByExcludingProtocol() throws Exception {
 		isUrlValid = urlSearch.isValid("facebook.com");
 		assertTrue(isUrlValid);
 
 	}
 
 	@Test
-	public void verifWithoutColon() throws Exception {
+	public void verifyWithoutColon() throws Exception {
 		isUrlValid = urlSearch.isValid("http//amazon.com");
 		assertFalse(isUrlValid);
 
 	}
 
 	@Test
-	public void verifWithoutForwordSlash() throws Exception {
+	public void verifyWithoutForwordSlash() throws Exception {
 		isUrlValid = urlSearch.isValid("http:google.com");
 		assertFalse(isUrlValid);
 
 	}
 
 	@Test
-	public void verifWithoutPeriod() throws Exception {
+	public void verifyWithoutPeriod() throws Exception {
 		isUrlValid = urlSearch.isValid("http://amazon com");
 		assertFalse(isUrlValid);
 
 	}
 
 	@Test
-	public void verifUrlWithAllCaptialLetters() throws Exception {
+	public void verifyUrlWithAllCaptialLetters() throws Exception {
 		isUrlValid = urlSearch.isValid("HTTP://AMAZON.COM");
 		assertTrue(isUrlValid);
 
@@ -207,7 +204,7 @@ public class UrlSearchTest {
 		assertFalse(isUrlValid);
 
 	}
-	
+
 	@Test
 	public void verifyByPassingCombinationOfValidInputs() throws Exception {
 		isUrlValid = urlSearch.isValid("http://Amazon.com");
